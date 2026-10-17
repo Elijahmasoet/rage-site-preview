@@ -36,14 +36,8 @@ a{color:inherit}
 .field label{display:block;font-size:14px;font-weight:600;margin-bottom:3px}
 .field .opt{font-weight:400;opacity:.75}
 .field input,.field select,.field textarea{width:100%;font-family:'Archivo',sans-serif;font-size:17px;color:var(--ink);background:var(--fieldbg);border:1px solid var(--fieldline);border-radius:var(--rad);padding:9px 12px}
-.field textarea{min-height:80px;resize:vertical}
+.field textarea{min-height:0;height:auto;resize:vertical}
 .field ::placeholder{color:#6b6454;opacity:1}
-details.more{margin:0 0 10px}
-details.more summary{cursor:pointer;font-weight:600;font-size:15px;padding:6px 0;list-style:none;display:flex;align-items:center;gap:8px}
-details.more summary::-webkit-details-marker{display:none}
-details.more summary::before{content:"+";display:inline-block;width:20px;height:20px;line-height:18px;text-align:center;border:1.5px solid currentColor;border-radius:50%;font-size:16px}
-details.more[open] summary::before{content:"\2212"}
-details.more .inner{padding-top:8px}
 .row2{display:grid;grid-template-columns:1fr;gap:0}
 .fine{font-size:13.5px;line-height:1.45;margin-top:10px}
 .thanks,.fail{font-size:20px;padding:8px 0}
@@ -140,7 +134,7 @@ h2.sec{font-size:26px;font-weight:600;line-height:1.2;margin-bottom:18px}
   <div class="field"><label for="f-store">Your store name</label><input id="f-store" name="store_link" type="text" required placeholder="e.g. Rage Thrift"></div>
   <div class="field"><label for="f-channel">Where do you sell?</label>
     <select id="f-channel" name="channel" required>
-      <option value="">Select one</option>
+      <option value="">Choose one</option>
       <option>Live sales (Whatnot / TikTok Live)</option>
       <option>eBay</option>
       <option>Depop / marketplaces</option>
@@ -149,20 +143,15 @@ h2.sec{font-size:26px;font-weight:600;line-height:1.2;margin-bottom:18px}
       <option>Other</option>
     </select></div>
   <div class="field"><label for="f-loc">Where are you based?</label><input id="f-loc" name="location" type="text" required autocomplete="address-level2" placeholder="e.g. Brisbane, QLD"></div>
-  <details class="more" id="moreBox">
-    <summary>A bit more detail (optional)</summary>
-    <div class="inner">
-      <div class="field"><label for="f-msg">What are you after? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="e.g. vintage band tees, activewear, women's fashion"></textarea></div>
-      <div class="field"><label for="f-vol">Roughly how much do you move a week? <span class="opt">(optional)</span></label>
-        <select id="f-vol" name="weekly_volume">
-          <option value="">Select one</option>
-          <option>Under 20</option>
-          <option>20 to 100</option>
-          <option>100 to 500</option>
-          <option>500+</option>
-        </select></div>
-    </div>
-  </details>
+  <div class="field"><label for="f-msg">What are you after?</label><textarea id="f-msg" name="message" rows="3" required placeholder="e.g. vintage band tees, activewear, women's fashion"></textarea></div>
+  <div class="field"><label for="f-vol">Roughly how much do you move a week?</label>
+    <select id="f-vol" name="weekly_volume" required>
+      <option value="">Choose one</option>
+      <option>Under 20</option>
+      <option>20 to 100</option>
+      <option>100 to 500</option>
+      <option>500+</option>
+    </select></div>
   <button class="btn" type="submit" id="submitBtn">Request a lot</button>
   <p class="fine">Trade buyers only. We'll use these details to contact you about stock. <a href="../privacy.html">Privacy policy</a>.</p>
 </form>
@@ -185,7 +174,7 @@ h2.sec{font-size:26px;font-weight:600;line-height:1.2;margin-bottom:18px}
 <section><div class="wrap">
   <h2 class="sec">How it works</h2>
   <div class="steps">
-    <div><div class="n">1</div><h3>Fill in the short form</h3><p>Tell us who you are and where you sell. Add more detail if you like.</p></div>
+    <div><div class="n">1</div><h3>Fill in the short form</h3><p>Tell us who you are, where you sell and what you're after.</p></div>
     <div><div class="n">2</div><h3>We get in touch</h3><p>A short chat so we can get a feel for how you sell. No mass blasts.</p></div>
     <div><div class="n">3</div><h3>You get photos</h3><p>We send photos and counts of a lot that suits you. Have a look, then take it or leave it.</p></div>
   </div>
